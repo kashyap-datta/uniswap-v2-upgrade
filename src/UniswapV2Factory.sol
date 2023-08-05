@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.21;
 
 import "./UniswapV2Pair.sol";
 import "./interfaces/IUniswapV2Pair.sol";
@@ -19,10 +19,10 @@ contract UniswapV2Factory {
     mapping(address => mapping(address => address)) public pairs;
     address[] public allPairs;
 
-    function createPair(address tokenA, address tokenB)
-        public
-        returns (address pair)
-    {
+    function createPair(
+        address tokenA,
+        address tokenB
+    ) public returns (address pair) {
         if (tokenA == tokenB) revert IdenticalAddresses();
 
         (address token0, address token1) = tokenA < tokenB

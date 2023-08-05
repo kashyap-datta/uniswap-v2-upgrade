@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.21;
 
 import "./interfaces/IUniswapV2Factory.sol";
 import "./interfaces/IUniswapV2Pair.sol";
@@ -35,11 +35,10 @@ library UniswapV2Library {
         return (amountIn * reserveOut) / reserveIn;
     }
 
-    function sortTokens(address tokenA, address tokenB)
-        internal
-        pure
-        returns (address token0, address token1)
-    {
+    function sortTokens(
+        address tokenA,
+        address tokenB
+    ) internal pure returns (address token0, address token1) {
         return tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
     }
 

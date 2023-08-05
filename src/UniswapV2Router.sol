@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.21;
 
 import "./interfaces/IUniswapV2Factory.sol";
 import "./interfaces/IUniswapV2Pair.sol";
@@ -26,14 +26,7 @@ contract UniswapV2Router {
         uint256 amountAMin,
         uint256 amountBMin,
         address to
-    )
-        public
-        returns (
-            uint256 amountA,
-            uint256 amountB,
-            uint256 liquidity
-        )
-    {
+    ) public returns (uint256 amountA, uint256 amountB, uint256 liquidity) {
         if (factory.pairs(tokenA, tokenB) == address(0)) {
             factory.createPair(tokenA, tokenB);
         }
@@ -118,7 +111,6 @@ contract UniswapV2Router {
         );
         _swap(amounts, path, to);
     }
-
 
     function _swap(
         uint256[] memory amounts,
