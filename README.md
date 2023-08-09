@@ -15,3 +15,5 @@ UniswapV2Router02
 UniswapV2Pair
 UniswapV2Factory
 9. Generate and commit a line coverage report to assess the quality of your tests
+
+![Alt text](coverage_report.jpg)
